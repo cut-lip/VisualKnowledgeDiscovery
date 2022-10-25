@@ -114,7 +114,7 @@ namespace GLprac {
     };
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> drawDot >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    void drawDot(GLint x, GLint y)
+    void drawPoint(GLint x, GLint y)
     {
         glBegin(GL_POINTS);
         glPointSize(4.0);

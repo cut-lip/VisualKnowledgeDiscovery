@@ -1,8 +1,12 @@
 #include <iostream>
+#include <vector>
 #include <GL/glut.h>
+#include "OpenGLPrac.h"
 
-const int SCREEN_WIDTH = 680;
-const int SCREEN_HEIGHT = 420;
+using namespace GLprac;
+
+const int SCREEN_WIDTH = 600;
+const int SCREEN_HEIGHT = 400;
 
 void init()
 {
@@ -13,15 +17,29 @@ void init()
 }
 
 void display() {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.0, 0.0, 0.0);
+	//glLineWidth()
+	drawArrow(GLintPoint(20, 20), GLintPoint(20, 100));
+	drawArrow(GLintPoint(20, 20), GLintPoint(580, 20));
 
+	glColor3f(0.0, 1.0, 0.0);
+	glPointSize(4.0);
+	for (int i = 42; i < 580; i+= (3*(560/18)))
+	{
+		drawPoint(i, 40);
+	}
+
+	glFlush();
 }
 
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
-	glutCreateWindow("Chapter 7 Visualizations");
-	glutInitWindowPosition(0,0);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	glutInitWindowPosition(100, 150);
+	glutCreateWindow("Chapter 7 Visualizations");
 	glutDisplayFunc(display);
 	init();
 	glutMainLoop();
