@@ -18,10 +18,41 @@ void init()
 
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
+	 
+	// Figure 6.1 - Upper PC
+	// Draw main coordinate frame
+	glColor3f(0.0, 0.0, 0.0);
+	glBegin(GL_LINE_STRIP);
+	glVertex2f(560, 150);
+	glVertex2f(20, 150);
+	glVertex2f(20, 380);
+	glVertex2f(560, 380);
+	glEnd();
+	
+	// Draw inner lines
+	for (int i = 150 + ((380 - 150) / 4); i < 350; i += ((380 - 150) / 4))
+	{
+		glBegin(GL_LINES);
+		glVertex2i(20, i);
+		glVertex2i(560, i);
+		glEnd();
+	}
+
+	// Draw 2-D graphs
+	glColor3f(0.0, 1.0, 0.0);
+	for (int i = 170; i < 340; i += (160 / 5))
+	{
+		glBegin(GL_LINES);
+			glVertex2i(20, i);
+			glVertex2i(560, i);
+		glEnd();
+	}
+	
+	// Figure 6.1 - Lower CPC
 	glColor3f(0.0, 0.0, 0.0);
 	//glLineWidth()
-	drawArrow(GLintPoint(20, 20), GLintPoint(20, 100));
-	drawArrow(GLintPoint(20, 20), GLintPoint(580, 20));
+	GLprac::drawArrow(GLintPoint(20, 20), GLintPoint(20, 100));
+	GLprac::drawArrow(GLintPoint(20, 20), GLintPoint(580, 20));
 
 	glColor3f(0.0, 1.0, 0.0);
 	glPointSize(4.0);
@@ -43,6 +74,6 @@ int main(int argc, char** argv)
 	glutDisplayFunc(display);
 	init();
 	glutMainLoop();
-
+	
 	return 0;
 }
