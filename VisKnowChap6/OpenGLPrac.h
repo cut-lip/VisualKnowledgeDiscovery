@@ -143,9 +143,9 @@ namespace GLprac {
         GLvec2 perpendicular = GLvec2(direction);
         perpendicular.Perpendicu();
 
-        GLvec2 pt1 = p2 - direction * (VERTICAL_SIZE / 80) * 3;
-        GLvec2 pt2 = pt1 - perpendicular * (VERTICAL_SIZE / 80);
-        GLvec2 pt3 = pt1 + perpendicular * (VERTICAL_SIZE / 80);
+        GLvec2 pt1 = p2 - direction * (VERTICAL_SIZE / 200) * 3;
+        GLvec2 pt2 = pt1 - perpendicular * (VERTICAL_SIZE / 200);
+        GLvec2 pt3 = pt1 + perpendicular * (VERTICAL_SIZE / 200);
 
         glVertex2i(p2.x, p2.y);
         glVertex2i(pt2.x, pt2.y);

@@ -40,26 +40,75 @@ void display() {
 
 	// Draw 2-D graphs
 	glColor3f(0.0, 1.0, 0.0);
-	for (int i = 170; i < 340; i += (160 / 5))
-	{
-		glBegin(GL_LINES);
-			glVertex2i(20, i);
-			glVertex2i(560, i);
-		glEnd();
-	}
+	glLineWidth(4.0);
+	glBegin(GL_LINE_STRIP);
+		glVertex2i(40, 180);
+		glVertex2i(111,180);
+		glVertex2i(182,180);
+		glVertex2i(253, 210);
+		glVertex2i(324, 210);
+		glVertex2i(395, 210);
+		glVertex2i(466, 210);
+		glVertex2i(537, 180);
+	glEnd();
+
+	glColor3f(1.0, 0.0, 0.0);
+	glLineWidth(4.0);
+	glBegin(GL_LINE_STRIP);
+	glVertex2i(40, 230);
+	glVertex2i(111, 180);
+	glVertex2i(182, 230);
+	glVertex2i(253, 210);
+	glVertex2i(321, 310);
+	glVertex2i(395, 210);
+	glVertex2i(466, 310);
+	glVertex2i(537, 180);
+	glEnd();
+
+	glColor3f(0.0, 0.0, 1.0);
+	glLineWidth(4.0);
+	glBegin(GL_LINE_STRIP);
+	glVertex2i(40, 310);
+	glVertex2i(111, 180);
+	glVertex2i(182, 310);
+	glVertex2i(253, 210);
+	glVertex2i(321, 350);
+	glVertex2i(395, 210);
+	glVertex2i(466, 350);
+	glVertex2i(537, 180);
+	glEnd();
 	
 	// Figure 6.1 - Lower CPC
 	glColor3f(0.0, 0.0, 0.0);
-	//glLineWidth()
+	glLineWidth(1.0);
 	GLprac::drawArrow(GLintPoint(20, 20), GLintPoint(20, 100));
 	GLprac::drawArrow(GLintPoint(20, 20), GLintPoint(580, 20));
 
 	glColor3f(0.0, 1.0, 0.0);
+	drawArrow(GLintPoint(130, 30), GLintPoint(130, 90));
+	drawArrow(GLintPoint(130, 90), GLintPoint(200, 90));
+	drawArrow(GLintPoint(200, 90), GLintPoint(200, 30));
+	drawArrow(GLintPoint(200, 30), GLintPoint(130, 30));
+
+	glColor3f(1.0, 0.0, 0.0);
+	drawArrow(GLintPoint(230, 30), GLintPoint(230, 90));
+	drawArrow(GLintPoint(230, 90), GLintPoint(300, 90));
+	drawArrow(GLintPoint(300, 90), GLintPoint(300, 30));
+	drawArrow(GLintPoint(300, 30), GLintPoint(230, 30));
+
+	glColor3f(0.0, 0.0, 1.0);
+	drawArrow(GLintPoint(330, 30), GLintPoint(330, 90));
+	drawArrow(GLintPoint(330, 90), GLintPoint(400, 90));
+	drawArrow(GLintPoint(400, 90), GLintPoint(400, 30));
+	drawArrow(GLintPoint(400, 30), GLintPoint(330, 30));
+
+	/*
 	glPointSize(4.0);
 	for (int i = 42; i < 580; i+= (3*(560/18)))
 	{
 		drawPoint(i, 40);
 	}
+	*/
 
 	glFlush();
 }
